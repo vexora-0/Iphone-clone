@@ -1,7 +1,7 @@
 import { OrbitControls, PerspectiveCamera, View } from "@react-three/drei";
 import Lights from "./Lights";
 import { Suspense } from "react";
-import Bird from "./Bird";
+import Model from "./Model";
 import * as THREE from "three";
 import Loader from "./Loader";
 
@@ -37,7 +37,7 @@ const ModelView = ({
       />
       <group ref={groupRef} name={`${index === 1 ? 'small' : 'large'}`} position={[0, 0, 0]}>
         <Suspense fallback={<Loader />}>
-          <Bird 
+          <Model 
             scale={index === 1 ? [0.02, 0.02, 0.02] : [0.025, 0.025, 0.025]}
             position={[0, -2, 0]}
             rotation={[0, Math.PI, 0]}
